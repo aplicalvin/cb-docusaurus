@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;600;700&display=swap');
+
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -6,26 +8,30 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2d54ff;
-  --ifm-color-primary-dark: #0924ff;
-  --ifm-color-primary-darker: #0017ff;
-  --ifm-color-primary-darkest: #0d1e91;
-  --ifm-color-primary-light: #5480ff;
-  --ifm-color-primary-lighter: #84adff;
-  --ifm-color-primary-lightest: #b2ceff;
+  --ifm-font-family-base: 'Gabarito', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'Roboto Mono', monospace;
+  --ifm-color-primary: #6376f1;
+  --ifm-color-primary-dark: #464fe5;
+  --ifm-color-primary-darker: #383eca;
+  --ifm-color-primary-darkest: #2e3481;
+  --ifm-color-primary-light: #8199f8;
+  --ifm-color-primary-lighter: #a5befc;
+  --ifm-color-primary-lightest: #c7d8fe;
+  
+  --ifm-global-radius: 12px;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #5480ff;
-  --ifm-color-primary-dark: #2d54ff;
-  --ifm-color-primary-darker: #0924ff;
-  --ifm-color-primary-darkest: #0017ff;
-  --ifm-color-primary-light: #84adff;
-  --ifm-color-primary-lighter: #b2ceff;
-  --ifm-color-primary-lightest: #d4e5ff;
+  --ifm-color-primary: #8199f8;
+  --ifm-color-primary-dark: #6376f1;
+  --ifm-color-primary-darker: #464fe5;
+  --ifm-color-primary-darkest: #3036a3;
+  --ifm-color-primary-light: #a5befc;
+  --ifm-color-primary-lighter: #c7d8fe;
+  --ifm-color-primary-lightest: #e0ebff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -66,4 +72,89 @@ html.blog-list-page article header h2 {
 /* Cleanup trailing margins inside card */
 html.blog-list-page article > :last-child {
   margin-bottom: 0;
+}
+
+/* GAMIFICATION UI STYLES */
+
+/* Chunky 3D Buttons */
+.button {
+  border-bottom: 4px solid var(--ifm-color-primary-darkest);
+  border-radius: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.1s ease;
+}
+
+.button:active {
+  border-bottom-width: 0px;
+  transform: translateY(4px);
+}
+
+.button--secondary {
+  border-bottom-color: var(--ifm-color-emphasis-400);
+}
+
+.button--secondary:hover {
+  border-color: var(--ifm-color-primary);
+  border-bottom-color: var(--ifm-color-primary-dark);
+}
+
+/* Vibrant Navbar and Sections */
+.navbar {
+  border-bottom: 3px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 4px 0 rgba(0,0,0,0.05);
+}
+
+/* Game-like general cards */
+.card {
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-bottom: 4px solid var(--ifm-color-emphasis-300);
+  border-radius: 16px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+  border-bottom-color: var(--ifm-color-primary-dark);
+}
+
+/* Update previous blog card for game feel */
+html.blog-list-page article {
+  border-width: 2px;
+  border-bottom-width: 6px;
+  border-radius: 16px;
+}
+
+/* GAMIFIED FOOTER */
+.footer {
+  border-top: 6px solid var(--ifm-color-emphasis-300);
+}
+
+.footer__title {
+  font-weight: 900;
+  color: var(--ifm-color-primary-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.footer__link-item {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.95rem;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+
+.footer__link-item:hover {
+  transform: translateX(4px);
+  color: var(--ifm-color-primary-lighter) !important;
+}
+
+.footer__copyright {
+  font-family: var(--ifm-font-family-monospace);
+  font-weight: bold;
+  opacity: 0.8;
+  margin-top: 2rem;
 }
