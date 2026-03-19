@@ -1,0 +1,69 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2d54ff;
+  --ifm-color-primary-dark: #0924ff;
+  --ifm-color-primary-darker: #0017ff;
+  --ifm-color-primary-darkest: #0d1e91;
+  --ifm-color-primary-light: #5480ff;
+  --ifm-color-primary-lighter: #84adff;
+  --ifm-color-primary-lightest: #b2ceff;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #5480ff;
+  --ifm-color-primary-dark: #2d54ff;
+  --ifm-color-primary-darker: #0924ff;
+  --ifm-color-primary-darkest: #0017ff;
+  --ifm-color-primary-light: #84adff;
+  --ifm-color-primary-lighter: #b2ceff;
+  --ifm-color-primary-lightest: #d4e5ff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Minimalist Card Design for Blog List items */
+html.blog-list-page article {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  margin-bottom: 2.5rem !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+html.blog-list-page article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--ifm-color-primary);
+}
+
+/* Adjust dark mode card borders and shadows */
+[data-theme='dark'] html.blog-list-page article {
+  border-color: var(--ifm-color-emphasis-300);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] html.blog-list-page article:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Make sure the main heading has appropriate spacing inside the card */
+html.blog-list-page article header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Cleanup trailing margins inside card */
+html.blog-list-page article > :last-child {
+  margin-bottom: 0;
+}
