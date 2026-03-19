@@ -178,8 +178,5 @@ const config = {
     }),
 };
 
-export default {
-  url: 'https://aplicalvin.netlify.app', // Url to your site with no trailing slash
-  baseUrl: '/', // Base directory of your site relative to your repo
-  // ...
-};
+
+export default config;
