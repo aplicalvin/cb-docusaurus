@@ -10,8 +10,8 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Belajar Pemrograman C++ dari awal',
-  tagline: 'Mulai perjalanan coding C++ Anda dari nol hingga mahir',
+  title: 'Platform Belajar Coding Interaktif',
+  tagline: 'Selesaikan quest programming dari Basic Web, Algoritma, hingga C++! 🎮',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -47,6 +47,7 @@ const config = {
         id: 'web-basic',
         path: 'docs/web-basic',
         routeBasePath: 'web-basic',
+        editUrl: undefined,
       },
     ],
     [
@@ -55,6 +56,7 @@ const config = {
         id: 'algorithm',
         path: 'docs/algorithm',
         routeBasePath: 'algorithm',
+        editUrl: undefined,
       },
     ],
   ],
@@ -96,11 +98,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Docs',
-        logo: {
-          alt: 'ApiCalvin',
-          src: 'img/logo.svg',
-        },
+        title: 'ApliCalvin Docs',
         items: [
           {
             type: 'docSidebar',
@@ -119,27 +117,35 @@ const config = {
             label: 'Algorithm',
             position: 'left',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/blog', label: 'Blog', position: 'right' },
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Materi Belajar',
+            title: '📜 Peta Misi',
             items: [
               {
-                label: 'Tutorial C++',
+                label: 'Quest C++',
                 to: '/cpp-basic/intro',
               },
               {
-                label: 'Blog & Update',
+                label: 'Quest Web',
+                to: '/web-basic/intro',
+              },
+              {
+                label: 'Quest Algo',
+                to: '/algorithm/intro',
+              },
+              {
+                label: 'Tavern (Blog)',
                 to: '/blog',
               },
             ],
           },
           {
-            title: 'Komunitas',
+            title: '🤝 Guilds & Aliansi',
             items: [
               {
                 label: 'Instagram (@rumahbiner)',
@@ -152,16 +158,16 @@ const config = {
             ],
           },
           {
-            title: 'Lainnya',
+            title: '⚙️ Pusat Komando',
             items: [
               {
-                label: 'Laporkan Isu',
+                label: 'Laporkan Bug',
                 href: 'https://github.com/aplicalvin/cb-docusaurus/issues',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Rumah Biner. Dibangun dengan penuh semangat ☕.`,
+        copyright: `🎮 Level Cleared! Copyright © ${new Date().getFullYear()} Rumah Biner. Dibangun dengan penuh semangat.`,
       },
       prism: {
         theme: prismThemes.github,
@@ -170,4 +176,8 @@ const config = {
     }),
 };
 
-export default config;
+export default {
+  url: 'https://aplicalvin.netlify.app', // Url to your site with no trailing slash
+  baseUrl: '/', // Base directory of your site relative to your repo
+  // ...
+};
