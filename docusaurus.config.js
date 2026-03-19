@@ -40,17 +40,34 @@ const config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'web-basic',
+        path: 'docs/web-basic',
+        routeBasePath: 'web-basic',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'algorithm',
+        path: 'docs/algorithm',
+        routeBasePath: 'algorithm',
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          path: 'docs/cpp-basic',
+          routeBasePath: 'cpp-basic',
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
@@ -58,10 +75,6 @@ const config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -83,9 +96,9 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'SitusKu',
+        title: 'Docs',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'ApiCalvin',
           src: 'img/logo.svg',
         },
         items: [
@@ -93,7 +106,18 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'C++ Basic',
+            docsPluginId: 'default',
+          },
+          {
+            to: '/web-basic/intro',
+            label: 'Web Basic',
+            position: 'left',
+          },
+          {
+            to: '/algorithm/intro',
+            label: 'Algorithm',
+            position: 'left',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
         ],
@@ -102,46 +126,42 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Materi Belajar',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Tutorial C++',
+                to: '/cpp-basic/intro',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
+                label: 'Blog & Update',
                 to: '/blog',
+              },
+            ],
+          },
+          {
+            title: 'Komunitas',
+            items: [
+              {
+                label: 'Instagram (@rumahbiner)',
+                href: 'https://instagram.com/rumahbiner',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/aplicalvin',
+              },
+            ],
+          },
+          {
+            title: 'Lainnya',
+            items: [
+              {
+                label: 'Laporkan Isu',
+                href: 'https://github.com/aplicalvin/cb-docusaurus/issues',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Rumah Biner. Dibangun dengan penuh semangat ☕.`,
       },
       prism: {
         theme: prismThemes.github,
